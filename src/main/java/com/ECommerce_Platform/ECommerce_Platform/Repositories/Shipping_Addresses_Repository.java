@@ -1,4 +1,7 @@
 package com.ECommerce_Platform.ECommerce_Platform.Repositories;
 
-public interface Shipping_Addresses_Repository {
+import com.ECommerce_Platform.ECommerce_Platform.Models.Shipping_Addresses;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface Shipping_Addresses_Repository extends JpaRepository<Shipping_Addresses, Long> {
 }

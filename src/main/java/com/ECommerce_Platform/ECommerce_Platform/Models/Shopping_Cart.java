@@ -1,10 +1,12 @@
 package com.ECommerce_Platform.ECommerce_Platform.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -19,4 +21,11 @@ public class Shopping_Cart {
     String creating_cart_date;
     String updated_cart_date;
 
+    @ManyToMany(mappedBy = "shopping_carts")
+    @JsonIgnore
+    private List<Product> products;
+
+    @ManyToMany(mappedBy = "shopping_carts")
+    @JsonIgnore
+    private List<User> users;
 }

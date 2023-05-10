@@ -16,4 +16,11 @@ public class Invoice {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long invoice_id;
 
+    @OneToOne
+    @JoinColumn(name = "order_id", referencedColumnName = "order_id")
+    Order order;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "user_id")
+    User user;
 }

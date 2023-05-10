@@ -15,5 +15,8 @@ public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long review_id;
+    String titleOfReview;
+    String textOfReview;
+    String date;
 
 }

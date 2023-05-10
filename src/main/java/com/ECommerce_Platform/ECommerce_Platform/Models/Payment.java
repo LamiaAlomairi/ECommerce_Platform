@@ -15,4 +15,8 @@ public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long payment_id;
+    Double amount;
+    String payment_method;
+    Integer transaction_id;
+    
 }

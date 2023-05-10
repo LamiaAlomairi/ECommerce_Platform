@@ -14,6 +14,9 @@ import javax.persistence.*;
 public class Shopping_Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long id;
     Long cart_id;
+    String creating_cart_date;
+    String updated_cart_date;
 
 }

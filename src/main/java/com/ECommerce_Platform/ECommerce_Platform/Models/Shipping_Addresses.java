@@ -14,6 +14,9 @@ import javax.persistence.*;
 public class Shipping_Addresses {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long shipping_id;
+    Long address_id;
+    String name_place;
+    String city;
+    String country;
 
 }

@@ -15,5 +15,7 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long order_id;
+    Double price;
+    String status;
 
 }

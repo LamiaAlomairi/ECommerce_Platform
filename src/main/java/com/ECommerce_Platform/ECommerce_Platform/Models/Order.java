@@ -12,21 +12,20 @@ import java.util.List;
 @Setter
 @Data
 @Entity
-@Table(name = "orderr")
+@Table(name = "ordered")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long order_id;
-
+    Long id;
     Double price;
     String status;
 
     @OneToOne
-    @JoinColumn(name = "invoice_id", referencedColumnName = "invoice_id")
+    @JoinColumn(name = "invoice_id", referencedColumnName = "id")
     Invoice invoice;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "user_id")
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
     User user;
 
     @OneToMany(mappedBy = "order")
@@ -34,6 +33,6 @@ public class Order {
     private List<Payment> payments;
 
     @ManyToOne
-    @JoinColumn(name = "product_id", referencedColumnName = "product_id")
+    @JoinColumn(name = "product_id", referencedColumnName = "id")
     Product product;
 }

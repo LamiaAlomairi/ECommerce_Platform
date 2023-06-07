@@ -1,7 +1,7 @@
 package com.ECommerce_Platform.ECommerce_Platform.Controllers;
 
 import com.ECommerce_Platform.ECommerce_Platform.Models.Product;
-import com.ECommerce_Platform.ECommerce_Platform.Services.Product_Service;
+import com.ECommerce_Platform.ECommerce_Platform.Services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,18 +9,18 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "product")
-public class Product_Controller {
+public class ProductController {
     //    http://localhost:8080/product/getAll
     @Autowired
-    Product_Service product_service;
+    ProductService productService;
     @RequestMapping(value = "getAll", method = RequestMethod.GET)
     public List<Product> getAllProducts() {
 
-        return product_service.getAllProducts();
+        return productService.getAllProducts();
     }
     @GetMapping(value = "getById")
     public Product getProductById(@RequestParam Long id) {
 
-        return product_service.getProductById(id);
+        return productService.getProductById(id);
     }
 }

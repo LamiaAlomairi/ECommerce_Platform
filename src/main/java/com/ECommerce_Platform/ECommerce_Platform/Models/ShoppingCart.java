@@ -12,16 +12,20 @@ import java.util.List;
 @Setter
 @Data
 @Entity
-@Table(name = "shipping_addresses")
-public class Shipping_Addresses {
+@Table(name = "shoppingCart")
+public class ShoppingCart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long address_id;
-    String name_place;
-    String city;
-    String country;
+    Long id;
+    Long cartId;
+    String creatingCartDate;
+    String updatedCartDate;
 
-    @ManyToMany(mappedBy = "shipping_addresses")
+    @ManyToMany(mappedBy = "shoppingCarts")
+    @JsonIgnore
+    private List<Product> products;
+
+    @ManyToMany(mappedBy = "shoppingCarts")
     @JsonIgnore
     private List<User> users;
 }

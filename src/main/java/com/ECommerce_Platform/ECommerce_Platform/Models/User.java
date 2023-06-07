@@ -12,15 +12,15 @@ import java.util.List;
 @Setter
 @Data
 @Entity
-@Table(name = "userr")
+@Table(name = "usered")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long user_id;
+    Long id;
 
     String name;
     String email;
-    Integer phone_number;
+    Integer phoneNumber;
 
     @OneToMany(mappedBy = "user")
     @JsonIgnore
@@ -36,9 +36,9 @@ public class User {
 
     @ManyToMany
     @JoinTable(name = "user_shipping_addresses", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "address_id"))
-    private List<Shipping_Addresses> shipping_addresses;
+    private List<ShippingAddresses> shippingAddresses;
 
     @ManyToMany
-    @JoinTable(name = "user_shopping_cart", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "id"))
-    private List<Shopping_Cart> shopping_carts;
+    @JoinTable(name = "user_shopping_cart", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "shopping_id"))
+    private List<ShoppingCart> shoppingCarts;
 }

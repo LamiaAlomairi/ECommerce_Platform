@@ -12,11 +12,11 @@ import java.util.List;
 @Setter
 @Data
 @Entity
-@Table(name = "product")
+@Table(name = "producted")
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long product_id;
+    Long id;
     String name;
     String description;
     Double price;
@@ -35,5 +35,5 @@ public class Product {
 
     @ManyToMany
     @JoinTable(name = "product_shopping_cart", joinColumns = @JoinColumn(name = "product_id"), inverseJoinColumns = @JoinColumn(name = "id"))
-    private List<Shopping_Cart> shopping_carts;
+    private List<ShoppingCart> shoppingCarts;
 }

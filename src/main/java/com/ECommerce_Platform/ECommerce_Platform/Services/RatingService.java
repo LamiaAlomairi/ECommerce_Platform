@@ -1,23 +1,23 @@
 package com.ECommerce_Platform.ECommerce_Platform.Services;
 
 import com.ECommerce_Platform.ECommerce_Platform.Models.Rating;
-import com.ECommerce_Platform.ECommerce_Platform.Repositories.Rating_Repository;
+import com.ECommerce_Platform.ECommerce_Platform.Repositories.RatingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class Rating_Service {
+public class RatingService {
     @Autowired
-    Rating_Repository rating_repository;
+    RatingRepository ratingRepository;
     public List<Rating> getAllRatings() {
 
-        return rating_repository.findAll();
+        return ratingRepository.findAll();
     }
 
     public Rating getRatingById(Long id) {
 
-        return rating_repository.findById(id).get();
+        return ratingRepository.findById(id).get();
     }
 }

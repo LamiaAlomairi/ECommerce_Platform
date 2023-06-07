@@ -16,7 +16,7 @@ import java.util.List;
 public class Rating {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long rating_id;
+    Long id;
     String rating;
 
     @ManyToMany(mappedBy = "ratings")

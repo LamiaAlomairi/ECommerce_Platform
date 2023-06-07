@@ -1,7 +1,7 @@
 package com.ECommerce_Platform.ECommerce_Platform.Controllers;
 
 import com.ECommerce_Platform.ECommerce_Platform.Models.Payment;
-import com.ECommerce_Platform.ECommerce_Platform.Services.Payment_Service;
+import com.ECommerce_Platform.ECommerce_Platform.Services.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,18 +9,18 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "payment")
-public class Payment_Controller {
+public class PaymentController {
     //    http://localhost:8080/payment/getAll
     @Autowired
-    Payment_Service payment_service;
+    PaymentService paymentService;
     @RequestMapping(value = "getAll", method = RequestMethod.GET)
     public List<Payment> getAllPayments() {
 
-        return payment_service.getAllPayments();
+        return paymentService.getAllPayments();
     }
     @GetMapping(value = "getById")
     public Payment getPaymentById(@RequestParam Long id) {
 
-        return payment_service.getPaymentById(id);
+        return paymentService.getPaymentById(id);
     }
 }

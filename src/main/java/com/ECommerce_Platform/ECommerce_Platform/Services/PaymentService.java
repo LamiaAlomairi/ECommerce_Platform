@@ -1,23 +1,23 @@
 package com.ECommerce_Platform.ECommerce_Platform.Services;
 
 import com.ECommerce_Platform.ECommerce_Platform.Models.Payment;
-import com.ECommerce_Platform.ECommerce_Platform.Repositories.Payment_Repository;
+import com.ECommerce_Platform.ECommerce_Platform.Repositories.PaymentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class Payment_Service {
+public class PaymentService {
     @Autowired
-    Payment_Repository payment_repository;
+    PaymentRepository paymentRepository;
     public List<Payment> getAllPayments() {
 
-        return payment_repository.findAll();
+        return paymentRepository.findAll();
     }
 
     public Payment getPaymentById(Long id) {
 
-        return payment_repository.findById(id).get();
+        return paymentRepository.findById(id).get();
     }
 }

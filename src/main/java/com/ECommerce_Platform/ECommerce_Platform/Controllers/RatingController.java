@@ -1,7 +1,7 @@
 package com.ECommerce_Platform.ECommerce_Platform.Controllers;
 
 import com.ECommerce_Platform.ECommerce_Platform.Models.Rating;
-import com.ECommerce_Platform.ECommerce_Platform.Services.Rating_Service;
+import com.ECommerce_Platform.ECommerce_Platform.Services.RatingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,18 +9,18 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "rating")
-public class Rating_Controller {
+public class RatingController {
     //    http://localhost:8080/rating/getAll
     @Autowired
-    Rating_Service rating_service;
+    RatingService ratingService;
     @RequestMapping(value = "getAll", method = RequestMethod.GET)
     public List<Rating> getAllRatings() {
 
-        return rating_service.getAllRatings();
+        return ratingService.getAllRatings();
     }
     @GetMapping(value = "getById")
     public Rating getRatingById(@RequestParam Long id) {
 
-        return rating_service.getRatingById(id);
+        return ratingService.getRatingById(id);
     }
 }
